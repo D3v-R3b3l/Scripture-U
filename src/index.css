@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  html {
+    background-color: #050609;
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: var(--font-mono);
+    background-color: #050609;
+    color: #f4f4f5;
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+    overflow-x: hidden;
+  }
+
+  /* Clear monospace sans-serif body prose for high legibility on dark obsidian surfaces */
+  p, blockquote, li, dd, .font-editorial, .font-body {
+    font-family: var(--font-mono);
+    line-height: 1.65;
+    letter-spacing: -0.005em;
+  }
+
+  /* Crisp geometric sans-serif for compact single-line UI controls and navigation */
+  button, nav, input, select, label, .font-ui {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: var(--font-cinzel);
+    text-wrap: balance;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Accessible keyboard focus indicators */
+  *:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 2px;
+  }
+}
+
+/* Precision Observatory Grid & Atmospheric Glows */
+.bg-observatory-grid {
+  background-color: #050609;
+  background-image:
+    radial-gradient(circle at 50% 35%, rgba(234, 88, 12, 0.09) 0%, rgba(217, 119, 6, 0.04) 35%, transparent 70%),
+    linear-gradient(to right, rgba(251, 191, 36, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(251, 191, 36, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.bg-sinai-dawn {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% 88%, rgba(234, 88, 12, 0.36) 0%, rgba(180, 83, 9, 0.18) 42%, rgba(5, 6, 9, 0.96) 80%),
+    linear-gradient(180deg, #040508 0%, #090b10 55%, #190d06 100%);
+}
+
+.glass-obsidian {
+  background: rgba(8, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 191, 36, 0.18);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.amber-orb-glow {
+  box-shadow:
+    0 0 22px rgba(245, 158, 11, 0.55),
+    0 0 45px rgba(234, 88, 12, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.65);
+}
+
+/* Reduced motion accessibility compliance */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06080d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
